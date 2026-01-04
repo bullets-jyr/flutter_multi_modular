@@ -1,0 +1,24 @@
+name: flutter_multi_modular
+packages:
+  - core/**
+  - features/**
+
+command:
+  bootstrap:
+    environment:
+      sdk: ^3.10.4
+      flutter: ">=1.17.0"
+
+    dependencies:
+      dio: ^5.9.0
+
+    dev_dependencies:
+      flutter_lints: ^6.0.0
+
+scripts:
+  clean: melos clean
+  cleanAndBootstrap: melos clean && melos bootstrap
+  test:
+    run: melos exec --concurrency=1 -- flutter test
+  update: flutter pub outdated
+  upgrade: flutter pub upgrade --major-versions

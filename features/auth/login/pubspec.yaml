@@ -2,6 +2,7 @@ name: login
 description: "A new Flutter package project."
 version: 0.0.1
 homepage:
+publish_to: 'none'
 
 environment:
   sdk: ^3.10.4
@@ -10,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dio: ^5.9.0
+  data:
+    path: ../../../core/data
 
 dev_dependencies:
   flutter_test:

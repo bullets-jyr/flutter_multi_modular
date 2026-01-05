@@ -3,6 +3,7 @@ import 'package:datastore/provider/session/session_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_multi_modular/di/injection.dart';
 import 'package:injectable/injectable.dart';
+import 'package:login/login.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    doLogin();
     setState(() {
       _counter++;
     });

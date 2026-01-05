@@ -44,6 +44,8 @@ dependencies:
     path: core/datastore
   data:
     path: core/data
+  login:
+    path: features/auth/login
 
 dev_dependencies:
   flutter_test:

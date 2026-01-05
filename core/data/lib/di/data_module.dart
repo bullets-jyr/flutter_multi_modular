@@ -24,11 +24,11 @@ abstract class DataModule {
       preferencesProvider.getAppLanguage();
 
   @lazySingleton
-  Future<Dio> dio(
+  Dio dio(
     @Named(DataModuleKeys.baseUrl) String baseUrl,
     @Named(DataModuleKeys.accessToken) String accessToken,
     @Named(DataModuleKeys.language) String language,
-  ) async {
+  ) {
     final dioFactory = DioFactory(
       baseUrl: baseUrl,
       accessToken: accessToken,

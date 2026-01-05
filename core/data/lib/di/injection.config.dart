@@ -37,7 +37,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => dataModule.provideAccessToken(gh<_i1014.SessionProvider>()),
       instanceName: 'AccessToken',
     );
-    gh.lazySingletonAsync<_i361.Dio>(
+    gh.lazySingleton<_i361.Dio>(
       () => dataModule.dio(
         gh<String>(instanceName: 'BaseUrl'),
         gh<String>(instanceName: 'AccessToken'),

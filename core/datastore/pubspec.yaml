@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   get_it: ^9.2.0
   injectable: ^2.7.1+4
+  shared_preferences: ^2.5.4
+  uuid: ^4.5.2
 
 dev_dependencies:
   flutter_test:

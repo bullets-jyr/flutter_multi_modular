@@ -36,6 +36,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   melos: ^6.3.3
+  get_it: ^9.2.0
+  injectable: ^2.7.1+4
+  app_settings:
+    path: features/settings/app_settings
+  datastore:
+    path: core/datastore
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +53,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  build_runner: ^2.10.4
+  injectable_generator: ^2.12.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

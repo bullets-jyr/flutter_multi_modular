@@ -13,7 +13,7 @@ class Calculator {
 
 void doLogin() async {
   final loginUseCase = getIt<LoginUseCase>();
-  final loginRequest = LoginRequest("mina@gmail.com", "123456");
+  final loginRequest = LoginRequest("jy.ryu.jiyoung@gmail.com", "123456");
 
   final result = await loginUseCase.execute(loginRequest);
   result.fold((failure) {

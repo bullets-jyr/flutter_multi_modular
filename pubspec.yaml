@@ -46,6 +46,8 @@ dependencies:
     path: core/data
   login:
     path: features/auth/login
+  navigator:
+    path: core/navigator
 
 dev_dependencies:
   flutter_test:

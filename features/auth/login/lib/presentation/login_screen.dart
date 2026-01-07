@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_multi_modular/di/injection.dart';
@@ -6,6 +5,8 @@ import 'package:login/domain/use_case/login_use_case.dart';
 import 'package:login/presentation/login_bloc.dart';
 import 'package:login/presentation/login_event.dart';
 import 'package:login/presentation/login_state.dart';
+import 'package:navigator/navigation_bloc.dart';
+import 'package:navigator/navigation_event.dart';
 import 'package:presentation/state_renderer/state_renderer.dart';
 import 'package:presentation/state_renderer/state_renderer_type.dart';
 
@@ -24,6 +25,13 @@ class LoginScreen extends StatelessWidget {
         create: (context) => LoginBloc(loginUseCase),
         child: BlocBuilder<LoginBloc, LoginState>(
           builder: (context, state) {
+            if (state is LoginSuccess) {
+              // call the navigation on successful login to navigate to main screen
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                _navigateToHome(context);
+              });
+            }
+
             return Stack(
               children: [
                 _buildMainScreenContent(context, state),
@@ -34,6 +42,10 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _navigateToHome(BuildContext context) {
+    context.read<NavigationBloc>().add(NavigateToHome());
   }
 
   Widget _buildMainScreenContent(BuildContext context, LoginState state) {

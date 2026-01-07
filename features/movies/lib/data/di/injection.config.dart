@@ -13,11 +13,11 @@ import 'package:data/network_info/network_info.dart' as _i131;
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:login/data/di/login_module.dart' as _i802;
-import 'package:login/data/remote/login_remote_data_source.dart' as _i286;
-import 'package:login/data/service/login_service.dart' as _i762;
-import 'package:login/domain/repository/login_repository.dart' as _i839;
-import 'package:login/domain/use_case/login_use_case.dart' as _i137;
+import 'package:movies/data/di/movies_module.dart' as _i442;
+import 'package:movies/data/remote/movies_remote_data_source.dart' as _i835;
+import 'package:movies/data/service/movies_service.dart' as _i809;
+import 'package:movies/domain/repository/movies_repository.dart' as _i591;
+import 'package:movies/domain/use_case/movies_use_case.dart' as _i657;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -26,25 +26,26 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
-    final loginModule = _$LoginModule();
-    gh.lazySingleton<_i762.LoginService>(
-      () => loginModule.provideLoginService(gh<_i361.Dio>()),
+    final moviesModule = _$MoviesModule();
+    gh.lazySingleton<_i809.MoviesService>(
+      () => moviesModule.provideMoviesService(gh<_i361.Dio>()),
     );
-    gh.lazySingleton<_i286.LoginRemoteDataSource>(
-      () => loginModule.provideLoginRemoteDataSource(
-        gh<_i762.LoginService>(),
+    gh.lazySingleton<_i835.MoviesRemoteDataSource>(
+      () => moviesModule.provideMoviesRemoteDataSource(
+        gh<_i809.MoviesService>(),
         gh<_i131.NetworkInfo>(),
       ),
     );
-    gh.lazySingleton<_i839.LoginRepository>(
-      () =>
-          loginModule.provideLoginRepository(gh<_i286.LoginRemoteDataSource>()),
+    gh.lazySingleton<_i591.MoviesRepository>(
+      () => moviesModule.provideMoviesRepository(
+        gh<_i835.MoviesRemoteDataSource>(),
+      ),
     );
-    gh.lazySingleton<_i137.LoginUseCase>(
-      () => loginModule.provideLoginUseCase(gh<_i839.LoginRepository>()),
+    gh.lazySingleton<_i657.MoviesUseCase>(
+      () => moviesModule.provideMoviesUseCase(gh<_i591.MoviesRepository>()),
     );
     return this;
   }
 }
 
-class _$LoginModule extends _i802.LoginModule {}
+class _$MoviesModule extends _i442.MoviesModule {}

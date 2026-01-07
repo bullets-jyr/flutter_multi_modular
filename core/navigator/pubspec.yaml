@@ -19,6 +19,8 @@ dependencies:
     path: ../../features/home/main
   flutter_multi_modular:
     path: ../..
+  movies:
+    path: ../../features/movies
 
 dev_dependencies:
   flutter_test:

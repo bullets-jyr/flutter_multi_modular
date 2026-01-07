@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: data,datastore,domain,extensions,login,main,presentation,app_settings,movies
+# melos_managed_dependency_overrides: app_settings,data,datastore,domain,extensions,login,main,movies,presentation
 dependency_overrides:
   app_settings:
     path: ../../features/settings/app_settings

@@ -17,9 +17,6 @@ abstract class LoginModule {
   }
 
   @lazySingleton
-  NetworkInfo provideNetworkInfo() => NetworkInfoImpl();
-
-  @lazySingleton
   LoginRemoteDataSource provideLoginRemoteDataSource(
     LoginService loginService,
     NetworkInfo networkInfo,

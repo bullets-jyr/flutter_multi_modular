@@ -48,6 +48,8 @@ dependencies:
     path: features/auth/login
   navigator:
     path: core/navigator
+  movies:
+    path: features/movies
 
 dev_dependencies:
   flutter_test:

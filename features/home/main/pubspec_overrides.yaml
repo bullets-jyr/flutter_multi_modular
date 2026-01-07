@@ -1,6 +1,20 @@
-# melos_managed_dependency_overrides: app_settings,movies
+# melos_managed_dependency_overrides: app_settings,movies,data,datastore,domain,extensions,login,navigator,presentation
 dependency_overrides:
   app_settings:
     path: ../../settings/app_settings
+  data:
+    path: ../../../core/data
+  datastore:
+    path: ../../../core/datastore
+  domain:
+    path: ../../../core/domain
+  extensions:
+    path: ../../../core/extensions
+  login:
+    path: ../../auth/login
   movies:
     path: ../../movies
+  navigator:
+    path: ../../../core/navigator
+  presentation:
+    path: ../../../core/presentation

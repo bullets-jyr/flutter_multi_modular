@@ -27,6 +27,8 @@ dependencies:
     path: ../../../core/domain
   extensions:
     path: ../../../core/extensions
+  presentation:
+    path: ../../../core/presentation
   flutter_multi_modular:
     path: ../../..
 

@@ -7,7 +7,7 @@ import 'package:navigator/navigation_types.dart';
 class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {
   NavigationBloc() : super(NavigationState("", NavigationType.push)) {
     on<NavigateToHome>((event, emit) {
-      emit(NavigationState(NavigationRoutes.home, NavigationType.replace));
+      emit(NavigationState(NavigationRoutes.main, NavigationType.replace));
     });
 
     on<NavigateToLogin>((event, emit) {

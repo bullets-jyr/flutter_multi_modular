@@ -4,7 +4,8 @@ import 'package:flutter_multi_modular/di/injection.dart';
 import 'package:login/domain/use_case/login_use_case.dart';
 import 'package:login/presentation/login_bloc.dart';
 import 'package:login/presentation/login_screen.dart';
-import 'package:main/home_screen.dart';
+import 'package:main/main_bloc.dart';
+import 'package:main/main_screen.dart';
 import 'package:navigator/navigation_bloc.dart';
 import 'package:navigator/navigation_routes.dart';
 import 'package:navigator/navigation_state.dart';
@@ -22,13 +23,13 @@ class NavigationModule extends StatelessWidget {
         // provide navigation bloc
         BlocProvider(create: (_) => LoginBloc(getIt<LoginUseCase>())),
         // provide login bloc
-        // BlocProvider(create: (_) => HomeBloc()), // provide home bloc
+        BlocProvider(create: (_) => MainScreenBloc()), // provide main bloc
       ],
 
       child: MaterialApp(
         routes: {
           NavigationRoutes.login: (context) => LoginScreen(),
-          NavigationRoutes.home: (context) => HomeScreen(),
+          NavigationRoutes.main: (context) => MainScreen(),
         },
         home: BlocListener<NavigationBloc, NavigationState>(
           child: LoginScreen(), // initial "default" screen

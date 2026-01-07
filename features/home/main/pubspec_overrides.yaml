@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: app_settings,movies
+dependency_overrides:
+  app_settings:
+    path: ../../settings/app_settings
+  movies:
+    path: ../../movies

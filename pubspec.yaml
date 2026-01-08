@@ -38,6 +38,8 @@ dependencies:
   melos: ^6.3.3
   get_it: ^9.2.0
   injectable: ^2.7.1+4
+  hive_ce: ^2.16.0
+  hive_ce_flutter: ^2.3.3
   app_settings:
     path: features/settings/app_settings
   datastore:
@@ -63,6 +65,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   build_runner: ^2.10.4
   injectable_generator: ^2.12.0
+  hive_ce_generator: ^1.11.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

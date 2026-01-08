@@ -19,6 +19,8 @@ dependencies:
   bloc: ^9.2.0
   flutter_bloc: ^9.1.1
   equatable: ^2.0.8
+  hive_ce: ^2.16.0
+  hive_ce_flutter: ^2.3.3
   data:
     path: ../../core/data
   datastore:
@@ -42,6 +44,7 @@ dev_dependencies:
   injectable_generator: ^2.12.0
   json_serializable: ^6.11.3
   retrofit_generator: ^10.2.1
+  hive_ce_generator: ^1.11.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
